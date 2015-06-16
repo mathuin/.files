@@ -6,7 +6,7 @@
 
 (setq debug-on-error t)
 
-(add-to-list 'load-path user-emacs-directory)
+;;;(add-to-list 'load-path user-emacs-directory)
 (defvar my-settings-path (concat user-emacs-directory "settings/"))
 (add-to-list 'load-path my-settings-path)
 
