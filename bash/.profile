@@ -17,7 +17,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # editor
-export EDITOR=vi
+export EDITOR=emacs
 
 # git-prompt variables
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -69,6 +69,9 @@ pathadd /usr/local/heroku/bin
 
 # Ruby
 pathadd ${HOME}/.gem/ruby/1.9.1/bin
+
+# Cask
+pathadd ${HOME}/.cask/bin
 
 # added by travis gem (possibly move to .bashrc)
 [ -f /home/jmt/.travis/travis.sh ] && source /home/jmt/.travis/travis.sh
