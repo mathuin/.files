@@ -1,7 +1,13 @@
+;;; init.el -- My init file
+
+;;; Commentary:
+
+;;; Code:
+
 (setq debug-on-error t)
 
 (add-to-list 'load-path user-emacs-directory)
-(setq my-settings-path (concat user-emacs-directory "settings/"))
+(defvar my-settings-path (concat user-emacs-directory "settings/"))
 (add-to-list 'load-path my-settings-path)
 
 (require 'cask "~/.cask/cask.el")
@@ -22,3 +28,6 @@
 (load "my-editing")
 (load "my-keybindings")
 (load "my-styles")
+
+(provide 'init)
+;;; init.el ends here
