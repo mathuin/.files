@@ -1,0 +1,15 @@
+# .gitignore
+*~
+*.elc
+auto-save-list
+recentf
+savehist
+saveplace
+eshell
+places
+.smex-items
+savefile/
+projectile-bookmarks.eld
+.cask
+tramp
+url
