@@ -13,3 +13,5 @@
 	user = mathuin
 [color]
 	ui = auto
+[push]
+	default = simple
