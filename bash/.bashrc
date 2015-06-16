@@ -114,6 +114,7 @@ if ! shopt -oq posix; then
 fi
 
 # keychain fun
+KEYCHAIN=""
 KEYS="id_rsa id_dsa do_id_rsa osuosl_id_rsa"
 for key in ${KEYS}; do
     if [ -e ${HOME}/.ssh/${key} ]; then
