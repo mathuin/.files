@@ -11,3 +11,5 @@
 	ui = auto
 [push]
 	default = simple
+[core]
+	editor = atom --wait
