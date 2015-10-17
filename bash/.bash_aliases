@@ -27,3 +27,14 @@ gen_mead_images() {
 
 # sigh
 alias fig=docker-compose
+
+# git!
+alias resync="git fetch upstream && git checkout master && git merge upstream/master && git push"
+
+# spacebase dev
+alias sbupdate="./linux_install.sh restore && ./linux_install.sh"
+
+# driver hell
+alias console='sudo cp /etc/default/grub.console /etc/default/grub && sudo update-grub && sudo reboot'
+
+alias gui='sudo cp /etc/default/grub.gui /etc/default/grub && sudo update-grub && sudo reboot'
