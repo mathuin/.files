@@ -18,6 +18,8 @@
     scrollPastEnd: true
     softWrap: true
     softWrapAtPreferredLineLength: true
+    fontFamily: "inconsolata"
   "merge-conflicts": {}
   "travis-ci-status": {}
   "git-plus": {}
+  "go-plus": {}
