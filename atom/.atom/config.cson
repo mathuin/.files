@@ -17,7 +17,6 @@
     showIndentGuide: true
     scrollPastEnd: true
     softWrap: true
-    softWrapAtPreferredLineLength: true
     fontFamily: "inconsolata"
   "merge-conflicts": {}
   "travis-ci-status": {}
