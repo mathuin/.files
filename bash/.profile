@@ -67,9 +67,6 @@ pathadd ${GOPATH}/bin
 # Heroku toolbelt
 pathadd /usr/local/heroku/bin
 
-# Ruby
-pathadd ${HOME}/.gem/ruby/1.9.1/bin
-
 # Cask
 pathadd ${HOME}/.cask/bin
 
