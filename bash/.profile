@@ -60,7 +60,10 @@ done
 pathadd /usr/local/cuda-5.0/bin
 
 # Go
-export GOMAXPROCS=16
+# JMT: GOMAXPROCS not needed with Go 1.5.1
+#export GOMAXPROCS=16
+export GOROOT=/usr/local/go
+pathadd ${GOROOT}/bin
 export GOPATH=/home/jmt/gopath
 pathadd ${GOPATH}/bin
 

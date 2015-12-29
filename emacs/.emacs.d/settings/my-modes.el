@@ -15,6 +15,10 @@
 
 (defvar magit-last-seen-setup-instructions "1.4.0")
 
+(require 'org)
+(setq org-todo-keywords
+      '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+
 (provide 'my-modes)
 ;;; my-modes.el ends here
 
