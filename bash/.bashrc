@@ -122,3 +122,7 @@ for key in ${KEYS}; do
     fi
 done
 eval `keychain --eval ${KEYCHAIN}`
+
+# as per armiller 2015-Dec-16
+eval "$(chef shell-init bash)"
+export PATH=/opt/kitchen/bin:$PATH
