@@ -80,3 +80,9 @@ pathadd ${HOME}/.cask/bin
 if hash hub 2>/dev/null; then
     $(hub alias -s)
 fi
+
+# as per armiller 2015-Dec-16
+if hash chef 2>/dev/null; then
+    eval "$(chef shell-init bash)"
+    pathadd /opt/kitchen/bin
+fi
