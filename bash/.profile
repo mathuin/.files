@@ -64,7 +64,7 @@ pathadd /usr/local/cuda-5.0/bin
 #export GOMAXPROCS=16
 export GOROOT=/usr/local/go
 pathadd ${GOROOT}/bin
-export GOPATH=/home/jmt/gopath
+export GOPATH=${HOME}/gopath
 pathadd ${GOPATH}/bin
 
 # Heroku toolbelt
@@ -74,7 +74,7 @@ pathadd /usr/local/heroku/bin
 pathadd ${HOME}/.cask/bin
 
 # added by travis gem (possibly move to .bashrc)
-[ -f /home/jmt/.travis/travis.sh ] && source /home/jmt/.travis/travis.sh
+[ -f ${HOME}/.travis/travis.sh ] && source ${HOME}/.travis/travis.sh
 
 # github/hub (since it's in ${HOME}/bin)
 if hash hub 2>/dev/null; then
