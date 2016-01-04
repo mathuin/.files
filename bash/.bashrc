@@ -115,10 +115,14 @@ fi
 
 # keychain fun
 KEYCHAIN=""
-KEYS="id_rsa id_dsa do_id_rsa osuosl_id_rsa"
-for key in ${KEYS}; do
-    if [ -e ${HOME}/.ssh/${key} ]; then
-	KEYCHAIN="${KEYCHAIN} ${key}"
-    fi
+NAMES="home do osuosl"
+PROTOS="rsa dsa"
+for name in ${NAMES}; do
+    for proto in ${PROTOS}; do
+        key="${name}_id_${proto}"
+        if [ -e ${HOME}/.ssh/${key} ]; then
+	        KEYCHAIN="${KEYCHAIN} ${key}"
+        fi
+    done
 done
 eval `keychain --eval ${KEYCHAIN}`
