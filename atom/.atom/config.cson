@@ -22,3 +22,5 @@
   "travis-ci-status": {}
   "git-plus": {}
   "go-plus": {}
+  "package-sync":
+    forceOverwrite: true
