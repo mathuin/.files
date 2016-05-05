@@ -1,26 +1,27 @@
 "*":
-  "exception-reporting":
-    userId: "025be5c2-c601-99a3-cc83-dc8ed147932f"
-  welcome:
-    showOnStartup: false
   core:
     themes: [
-      "one-dark-ui"
-      "solarized-dark-syntax"
+      "atom-dark-ui"
+      "atom-dark-syntax"
     ]
-  "one-dark-ui": {}
   editor:
-    invisibles: {}
-    tabLength: 4
     backUpBeforeSaving: true
-    showInvisibles: true
-    showIndentGuide: true
-    scrollPastEnd: true
-    softWrap: true
     fontFamily: "inconsolata"
-  "merge-conflicts": {}
-  "travis-ci-status": {}
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "025be5c2-c601-99a3-cc83-dc8ed147932f"
   "git-plus": {}
   "go-plus": {}
+  latex: {}
+  "merge-conflicts": {}
+  "one-dark-ui": {}
   "package-sync":
     forceOverwrite: true
+  "travis-ci-status": {}
+  welcome:
+    showOnStartup: false

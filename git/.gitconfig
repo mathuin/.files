@@ -7,9 +7,22 @@
 	last = log -1 --stat
 	unstage = reset HEAD --
 	cached = diff --cached
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	p = pull --rebase --ff-only
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --name-only
+	ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
+	ld = log --pretty=format:\"%C(yellow)%h\\\\ %C(green)%ad%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --date=short --graph
+	ls = log --pretty=format:\"%C(green)%h\\\\ %C(yellow)[%ad]%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --date=relative
 [color]
 	ui = auto
 [push]
 	default = simple
 [core]
 	editor = atom --wait
+[user]
+	name = Jack Twilley
+	email = mathuin@gmail.com
