@@ -25,3 +25,5 @@
   "travis-ci-status": {}
   welcome:
     showOnStartup: false
+  whitespace:
+    removeTrailingWhitespace: false
