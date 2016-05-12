@@ -115,7 +115,7 @@ fi
 
 # keychain fun
 KEYCHAIN=""
-NAMES="home do osuosl"
+NAMES="home do osuosl openstack firfile"
 PROTOS="rsa dsa"
 for name in ${NAMES}; do
     for proto in ${PROTOS}; do
@@ -126,3 +126,11 @@ for name in ${NAMES}; do
     done
 done
 eval `keychain --eval ${KEYCHAIN}`
+
+function fsh () {
+    ssh -t fir "sudo bash -i -c \"ssh $@\""
+}
+
+# sigh
+eval "$(chef shell-init bash)"
+export PATH=/opt/kitchen/bin:$PATH
