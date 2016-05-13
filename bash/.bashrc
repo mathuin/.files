@@ -10,7 +10,6 @@ esac
 
 # Prevent loops
 RUNNING_BASHRC=1
-echo "running bashrc!"
 
 # If .profile has not yet been called, call it.
 if [ -z "$RUNNING_PROFILE" ]; then
@@ -142,8 +141,3 @@ eval `keychain --eval ${KEYCHAIN}`
 function fsh () {
     ssh -t fir "sudo bash -i -c \"ssh $@\""
 }
-
-# sigh
-eval "$(chef shell-init bash)"
-export PATH=/opt/kitchen/bin:$PATH
-export PATH=$PATH:~/.local/bin
