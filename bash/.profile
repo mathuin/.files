@@ -8,11 +8,15 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Prevent loops
+export RUNNING_PROFILE=1
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    if [ -z "$RUNNING_BASHRC" ]; then
+        if [ -f "$HOME/.bashrc" ]; then
+            . "$HOME/.bashrc"
+        fi
     fi
 fi
 
