@@ -8,11 +8,15 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Prevent loops
+export RUNNING_PROFILE=1
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    if [ -z "$RUNNING_BASHRC" ]; then
+        if [ -f "$HOME/.bashrc" ]; then
+            . "$HOME/.bashrc"
+        fi
     fi
 fi
 
@@ -60,10 +64,6 @@ done
 pathadd /usr/local/cuda-5.0/bin
 
 # Go
-# JMT: GOMAXPROCS not needed with Go 1.5.1
-#export GOMAXPROCS=16
-export GOROOT=/usr/local/go
-pathadd ${GOROOT}/bin
 export GOPATH=${HOME}/gopath
 pathadd ${GOPATH}/bin
 
@@ -86,3 +86,6 @@ if hash chef 2>/dev/null; then
     eval "$(chef shell-init bash)"
     pathadd /opt/kitchen/bin
 fi
+
+# pip install --user packages go here
+pathadd ${HOME}/.local/bin

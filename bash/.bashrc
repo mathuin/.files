@@ -8,6 +8,17 @@ case $- in
       *) return;;
 esac
 
+# Prevent loops
+RUNNING_BASHRC=1
+
+# If .profile has not yet been called, call it.
+if [ -z "$RUNNING_PROFILE" ]; then
+    if [ -f "$HOME/.profile" ]; then
+	. "$HOME/.profile"
+    fi
+fi
+
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -130,7 +141,3 @@ eval `keychain --eval ${KEYCHAIN}`
 function fsh () {
     ssh -t fir "sudo bash -i -c \"ssh $@\""
 }
-
-# sigh
-eval "$(chef shell-init bash)"
-export PATH=/opt/kitchen/bin:$PATH
