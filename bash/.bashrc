@@ -68,20 +68,86 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # Prompt color codes
+    COLOR_DEFAULT="\[\e[0m\]"
+    COLOR_BLACK="\[\e[0;30m\]"
+    COLOR_BLUE="\[\e[0;34m\]"
+    COLOR_GREEN="\[\e[0;32m\]"
+    COLOR_CYAN="\[\e[0;36m\]"
+    COLOR_RED="\[\e[0;31m\]"
+    COLOR_PURPLE="\[\e[0;35m\]"
+    COLOR_BROWN="\[\e[0;33m\]"
+    COLOR_GRAY="\[\e[0;37m\]"
+    COLOR_DARK_GRAY="\[\e[1;30m\]"
+    COLOR_L_BLUE="\[\e[1;34m\]"
+    COLOR_L_GREEN="\[\e[1;32m\]"
+    COLOR_L_CYAN="\[\e[1;36m\]"
+    COLOR_L_RED="\[\e[1;31m\]"
+    COLOR_L_PURPLE="\[\e[1;35m\]"
+    COLOR_YELLOW="\[\e[1;33m\]"
+    COLOR_WHITE="\[\e[1;37m\]"
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    COLOR_DEFAULT=""
+    COLOR_BLACK=""
+    COLOR_BLUE=""
+    COLOR_GREEN=""
+    COLOR_CYAN=""
+    COLOR_RED=""
+    COLOR_PURPLE=""
+    COLOR_BROWN=""
+    COLOR_GRAY=""
+    COLOR_DARK_GRAY=""
+    COLOR_L_BLUE=""
+    COLOR_L_GREEN=""
+    COLOR_L_CYAN=""
+    COLOR_L_RED=""
+    COLOR_L_PURPLE=""
+    COLOR_YELLOW=""
+    COLOR_WHITE=""
 fi
-unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+# Prompts can have colors embedded, as they will be ignored if not supported.
+git_ps1()
+{
+    __git_ps1 '(%s) '
+}
+
+__machine_ps1()
+{
+    local format=${1:- [%s]}
+    if test ${DOCKER_MACHINE_NAME}; then
+	local status=$(docker-machine status ${DOCKER_MACHINE_NAME})
+	case ${status} in
+	    Running)
+		status=' R'
+		;;
+	    Stopping)
+		status=' R->S'
+		;;
+	    Starting)
+		status=' S->R'
+		;;
+	    Error|Timeout)
+		status=' E'
+		;;
+	    *)
+		# everything else is stopped
+		status=' S'
+		;;
+	esac
+    fi
+    printf -- "${format}" "${DOCKER_MACHINE_NAME}${status}"
+
+}
+
+machine_ps1()
+{
+    __machine_ps1 '[%s] '
+}
+
+PS1="${COLOR_L_RED}\$(machine_ps1)${COLOR_L_PURPLE}\$(git_ps1)${COLOR_L_GREEN}\u@\h${COLOR_DEFAULT}:${COLOR_L_BLUE}\w${COLOR_DEFAULT}\$ "
+
+unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
