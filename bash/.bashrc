@@ -135,9 +135,8 @@ __machine_ps1()
 		status=' S'
 		;;
 	esac
+	printf -- "${format}" "${DOCKER_MACHINE_NAME}${status}"
     fi
-    printf -- "${format}" "${DOCKER_MACHINE_NAME}${status}"
-
 }
 
 machine_ps1()
