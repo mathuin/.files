@@ -21,7 +21,10 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # editor
-export EDITOR=emacs
+export EDITOR=atom
+
+# python virtualenvs
+export WORKON_HOME=~/.virtualenvs
 
 # git-prompt variables
 export GIT_PS1_SHOWDIRTYSTATE=1

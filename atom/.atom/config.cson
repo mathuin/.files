@@ -22,6 +22,15 @@
   "one-dark-ui": {}
   "package-sync":
     forceOverwrite: true
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "text.tex.latex"
+    ]
   "travis-ci-status": {}
   welcome:
     showOnStartup: false
