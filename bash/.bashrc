@@ -107,10 +107,17 @@ else
 fi
 
 # Prompts can have colors embedded, as they will be ignored if not supported.
-git_ps1()
-{
-    __git_ps1 '(%s) '
-}
+if [ `type -t __git_ps1 | wc -l` -gt 0 ]; then
+    git_ps1()
+    {
+        __git_ps1 '(%s) '
+    }
+else
+    git_ps1()
+    {
+        :
+    }
+fi
 
 __machine_ps1()
 {
@@ -190,18 +197,14 @@ if ! shopt -oq posix; then
 fi
 
 # keychain fun
-KEYCHAIN=""
-NAMES="home do osuosl openstack firfile"
-PROTOS="rsa dsa"
-for name in ${NAMES}; do
+if [ `which keychain | wc -l` -gt 0 ]; then
+    KEYCHAIN=""
+    PROTOS="rsa dsa"
     for proto in ${PROTOS}; do
-        key="${name}_id_${proto}"
-        if [ -e ${HOME}/.ssh/${key} ]; then
-	        KEYCHAIN="${KEYCHAIN} ${key}"
-        fi
+        KEYCHAIN="${KEYCHAIN} `echo ${HOME}/.ssh/*_id_${proto}`"
     done
-done
-eval `keychain --eval ${KEYCHAIN}`
+    eval `keychain --eval ${KEYCHAIN}`
+fi
 
 function fsh () {
     ssh -t fir "sudo bash -i -c \"ssh $@\""

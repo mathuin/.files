@@ -33,7 +33,9 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_DESCRIBE_STYLE="branch"
 export GIT_PS1_SHOWCOLORHINTS=1
-#export PROMPT_COMMAND='__git_ps1'
+if [ `type -t __git_ps1 | wc -l` -gt 0 ]; then
+    : # export PROMPT_COMMAND='__git_ps1'
+fi
 
 export PATH
 
@@ -67,7 +69,7 @@ done
 pathadd /usr/local/cuda-5.0/bin
 
 # Go
-export GOPATH=${HOME}/gopath
+export GOPATH=${HOME}/go
 pathadd ${GOPATH}/bin
 
 # Heroku toolbelt
@@ -81,7 +83,7 @@ pathadd ${HOME}/.cask/bin
 
 # github/hub (since it's in ${HOME}/bin)
 if hash hub 2>/dev/null; then
-    $(hub alias -s)
+    eval $(hub alias -s)
 fi
 
 # as per armiller 2015-Dec-16
