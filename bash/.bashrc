@@ -107,17 +107,12 @@ else
 fi
 
 # Prompts can have colors embedded, as they will be ignored if not supported.
-if [ `type -t __git_ps1 | wc -l` -gt 0 ]; then
-    git_ps1()
-    {
+git_ps1()
+{
+    if [ `type -t __git_ps1 | wc -l` -gt 0 ]; then
         __git_ps1 '(%s) '
-    }
-else
-    git_ps1()
-    {
-        :
-    }
-fi
+    fi
+}
 
 __machine_ps1()
 {
