@@ -83,7 +83,7 @@ pathadd ${HOME}/.cask/bin
 
 # github/hub (since it's in ${HOME}/bin)
 if hash hub 2>/dev/null; then
-    eval $(hub alias -s)
+    eval "$(hub alias -s)"
 fi
 
 # as per armiller 2015-Dec-16
