@@ -32,7 +32,7 @@ alias fig=docker-compose
 alias resync="git fetch upstream && git checkout master && git merge upstream/master && git push"
 
 # spacebase dev
-alias sbupdate="./packaging/linux_install.sh restore && ./packaging/linux_install.sh"
+alias sbupdate="STEAM_COMMON=/home/jmt/.steam/steamapps/common ./packaging/linux_install.sh restore && STEAM_COMMON=/home/jmt/.steam/steamapps/common ./packaging/linux_install.sh"
 
 # driver hell
 alias console='sudo cp /etc/default/grub.console /etc/default/grub && sudo update-grub && sudo reboot'
