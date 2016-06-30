@@ -18,6 +18,8 @@
   "git-plus": {}
   "go-plus": {}
   latex: {}
+  "linter-flake8":
+    maxLineLength: 1000
   "merge-conflicts": {}
   "one-dark-ui": {}
   "package-sync":
