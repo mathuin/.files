@@ -46,6 +46,12 @@ pathadd() {
     fi
 }
 
+pathpre() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$1:${PATH}"
+    fi
+}
+
 pathclean() {
     entries=$(echo $PATH | tr ":" " ")
     PATH=
@@ -57,7 +63,10 @@ pathclean() {
 pathclean
 
 # set PATH so it includes user's private bin if it exists
-pathadd ${HOME}/bin
+pathpre ${HOME}/bin
+
+# pip install --user packages go here
+pathpre ${HOME}/.local/bin
 
 # Android
 export ADT=/home/jmt/android-studio
@@ -91,9 +100,6 @@ if hash chef 2>/dev/null; then
     eval "$(chef shell-init bash)"
     pathadd /opt/kitchen/bin
 fi
-
-# pip install --user packages go here
-pathadd ${HOME}/.local/bin
 
 # end .profile
 
