@@ -68,6 +68,9 @@ pathpre ${HOME}/bin
 # pip install --user packages go here
 pathpre ${HOME}/.local/bin
 
+# local NPM stuff goes here
+pathpre ${HOME}/node_modules/.bin
+
 # Android
 export ADT=/home/jmt/android-studio
 for newpath in ${ADT}/bin ${ADT}/sdk/tools ${ADT}/sdk/platform-tools; do
