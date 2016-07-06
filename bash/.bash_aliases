@@ -38,3 +38,6 @@ alias sbupdate="STEAM_COMMON=/home/jmt/.steam/steamapps/common ./packaging/linux
 alias console='sudo cp /etc/default/grub.console /etc/default/grub && sudo update-grub && sudo reboot'
 
 alias gui='sudo cp /etc/default/grub.gui /etc/default/grub && sudo update-grub && sudo reboot'
+
+# Dragon Age!
+alias playda='/opt/wine-staging/bin/wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steamapps/common/Dragon\ Age\ Ultimate\ Edition/bin_ship/DAOrigins.exe'
