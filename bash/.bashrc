@@ -71,6 +71,11 @@ pathpre ${HOME}/.local/bin
 # local NPM stuff goes here
 pathpre ${HOME}/node_modules/.bin
 
+# local Ruby stuff goes here
+pathpre ${HOME}/.rbenv/bin
+eval "$(rbenv init -)"
+pathpre ${HOME}/.rbenv/plugins/ruby-build/bin
+
 # Android
 export ADT=/home/jmt/android-studio
 for newpath in ${ADT}/bin ${ADT}/sdk/tools ${ADT}/sdk/platform-tools; do
@@ -94,7 +99,7 @@ pathadd ${HOME}/.cask/bin
 [ -f ${HOME}/.travis/travis.sh ] && source ${HOME}/.travis/travis.sh
 
 # github/hub (since it's in ${HOME}/bin)
-if [ `which hub | wc -l` -gt 0 ]; then
+if hash hub 2>/dev/null; then
     eval "$(hub alias -s)"
 fi
 
@@ -279,13 +284,25 @@ if ! shopt -oq posix; then
 fi
 
 # keychain fun
-if [ `which keychain | wc -l` -gt 0 ]; then
-    KEYCHAIN=""
-    PROTOS="rsa dsa"
-    for proto in ${PROTOS}; do
-        KEYCHAIN="${KEYCHAIN} `echo ${HOME}/.ssh/*_id_${proto}`"
+# keychain_add_dir expects one argument: the name of a directory in ~/.ssh with keys
+keychain_add_dir() {
+    if hash keychain 2>/dev/null; then
+        KEYDIR="${HOME}/.ssh/$1"
+        if [ -d ${KEYDIR} ]; then
+            KEYS=`find ${HOME}/.ssh/$1 \( -name "*_id_rsa" -o -name "*_id_dsa" \) -print | xargs echo`
+            eval `keychain --eval ${KEYS}`
+        fi
+    fi
+}
+KEYCHAIN_DIRFILE="${HOME}/.ssh/keychain-list"
+if hash keychain 2>/dev/null; then
+    KEYCHAIN_DIRS="."
+    if [ -f ${KEYCHAIN_DIRFILE} ]; then
+        KEYCHAIN_DIRS=`xargs echo < ${KEYCHAIN_DIRFILE}`
+    fi
+    for dir in ${KEYCHAIN_DIRS}; do
+        keychain_add_dir $dir
     done
-    eval `keychain --eval ${KEYCHAIN}`
 fi
 
 function fsh () {
