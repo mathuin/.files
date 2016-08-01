@@ -21,8 +21,6 @@
 	ui = auto
 [push]
 	default = simple
-[core]
-	editor = atom --wait
 [user]
 	name = Jack Twilley
 	email = mathuin@gmail.com

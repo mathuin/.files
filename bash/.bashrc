@@ -21,7 +21,11 @@ fi
 # taken from .profile
 
 # editor
-export EDITOR=atom
+if [ "$DISPLAY" ]; then
+    export EDITOR="atom --wait"
+else
+    export EDITOR=vi
+fi
 
 # python virtualenvs
 export WORKON_HOME=~/.virtualenvs
@@ -104,10 +108,10 @@ if hash hub 2>/dev/null; then
 fi
 
 # as per armiller 2015-Dec-16
-if hash chef 2>/dev/null; then
-    eval "$(chef shell-init bash)"
-    pathadd /opt/kitchen/bin
-fi
+# if hash chef 2>/dev/null; then
+#     eval "$(chef shell-init bash)"
+#     pathadd /opt/kitchen/bin
+# fi
 
 # end .profile
 

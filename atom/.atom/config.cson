@@ -1,8 +1,5 @@
 "*":
   core:
-    disabledPackages: [
-      "linter-flake8"
-    ]
     themes: [
       "atom-dark-ui"
       "atom-dark-syntax"
