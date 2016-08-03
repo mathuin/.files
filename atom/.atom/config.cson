@@ -21,6 +21,10 @@
   "linter-flake8":
     maxLineLength: 1000
   "merge-conflicts": {}
+  minimap:
+    plugins:
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
   "one-dark-ui": {}
   "package-sync":
     forceOverwrite: true
