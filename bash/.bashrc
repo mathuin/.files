@@ -312,3 +312,15 @@ fi
 function fsh () {
     ssh -t fir "sudo bash -i -c \"ssh $@\""
 }
+
+# run arandr if necessary
+if [ "$DISPLAY" ]; then
+    LAYOUTDIR="${HOME}/.screenlayout"
+    if [ -d "${LAYOUTDIR}" ]; then
+        HOST=`hostname`
+        LAYOUT="${LAYOUTDIR}/${HOST}.sh"
+        if [ -e "${LAYOUT}" ]; then
+            . ${LAYOUT}
+        fi
+    fi
+fi
