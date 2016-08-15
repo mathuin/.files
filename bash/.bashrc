@@ -92,6 +92,9 @@ pathadd /usr/local/cuda-5.0/bin
 # Go
 export GOPATH=${HOME}/go
 pathadd ${GOPATH}/bin
+if [ -d /usr/lib/go-1.6 ]; then
+  pathpre /usr/lib/go-1.6/bin
+fi
 
 # Heroku toolbelt
 pathadd /usr/local/heroku/bin
