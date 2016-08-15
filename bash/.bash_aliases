@@ -35,9 +35,8 @@ alias resync="git fetch upstream && git checkout master && git merge upstream/ma
 alias sbupdate="STEAM_COMMON=/home/jmt/.steam/steamapps/common ./packaging/linux_install.sh restore && STEAM_COMMON=/home/jmt/.steam/steamapps/common ./packaging/linux_install.sh"
 
 # driver hell
-alias console='sudo cp /etc/default/grub.console /etc/default/grub && sudo update-grub && sudo reboot'
-
-alias gui='sudo cp /etc/default/grub.gui /etc/default/grub && sudo update-grub && sudo reboot'
+alias console='sudo systemctl set-default multi-user.target && sudo reboot'
+alias gui='sudo systemctl set-default graphical.target && sudo reboot'
 
 # Dragon Age!
-alias playda='/opt/wine-staging/bin/wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steamapps/common/Dragon\ Age\ Ultimate\ Edition/bin_ship/DAOrigins.exe'
+alias playda='wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steamapps/common/Dragon\ Age\ Ultimate\ Edition/bin_ship/DAOrigins.exe -no-dwrite'
