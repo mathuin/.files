@@ -1,4 +1,6 @@
 "*":
+  "circle-ci":
+    apiToken: "1ee71591fa0d51ed7e892c13fb78c645556f2e76"
   core:
     themes: [
       "atom-dark-ui"
@@ -42,3 +44,9 @@
     showOnStartup: false
   whitespace:
     removeTrailingWhitespace: false
+".TIS-100.asm.source":
+  editor:
+    tabLength: 4
+".TIS.asm.source":
+  editor:
+    tabLength: 4
