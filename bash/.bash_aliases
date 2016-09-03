@@ -40,3 +40,4 @@ alias gui='sudo systemctl set-default graphical.target && sudo reboot'
 
 # Dragon Age!
 alias playda='wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steamapps/common/Dragon\ Age\ Ultimate\ Edition/bin_ship/DAOrigins.exe -no-dwrite'
+alias steamwine="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe"
