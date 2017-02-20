@@ -2,13 +2,17 @@
   "circle-ci":
     apiToken: "1ee71591fa0d51ed7e892c13fb78c645556f2e76"
   core:
+    disabledPackages: [
+      "gometalinter-linter"
+    ]
+    telemetryConsent: "limited"
     themes: [
       "atom-dark-ui"
       "atom-dark-syntax"
     ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "inconsolata"
+    fontFamily: "Go Mono"
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -30,6 +34,8 @@
   "one-dark-ui": {}
   "package-sync":
     forceOverwrite: true
+  "pretty-json":
+    prettifyOnSaveJSON: true
   "spell-check":
     grammars: [
       "source.asciidoc"
@@ -40,6 +46,7 @@
       "text.tex.latex"
     ]
   "travis-ci-status": {}
+  "tree-view": {}
   welcome:
     showOnStartup: false
   whitespace:
@@ -48,5 +55,8 @@
   editor:
     tabLength: 4
 ".TIS.asm.source":
+  editor:
+    tabLength: 4
+".diff.source":
   editor:
     tabLength: 4
