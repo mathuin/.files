@@ -6,6 +6,7 @@ alias vncclean='rm /tmp/.X3-lock /tmp/.X11-unix/X3'
 # should be 1276x985
 alias vnccyan='vncserver -geometry 1274x983 :3'
 alias vncaurora='vncserver -geometry 1366x768 :3'
+alias vncchrome='vncserver -geometry 1920x1080 :3'
 
 # gmrhc
 alias gmrhc='/home/jmt/git/brutal-chaos/GMRHC/dist/build/GMRHC/GMRHC --key YUQWJY4TKXE3'
