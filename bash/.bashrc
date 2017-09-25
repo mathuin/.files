@@ -79,6 +79,9 @@ pathpre ${HOME}/node_modules/.bin
 pathpre ${HOME}/.rbenv/bin
 eval "$(rbenv init -)"
 pathpre ${HOME}/.rbenv/plugins/ruby-build/bin
+for newpath in ${HOME}/.gem/ruby/*/bin; do
+    pathadd $newpath
+done
 
 # Android
 export ADT=/home/jmt/android-studio
@@ -325,3 +328,52 @@ if [ "$DISPLAY" ]; then
         fi
     fi
 fi
+
+HASTE_SERVER=https://hastebin.twilley.org/
+haste () {
+    local output returnfile contents server docs
+    if [ -z ${HASTE_SERVER+x} ]; then
+	server="http://hastebin.com/"
+    else
+	server=$HASTE_SERVER
+    fi
+    server=$(echo $server | sed -e "s|/$||")
+    docs=${server}/documents
+    if (( $# == 0 )) && [[ $(printf "%s" "$0" | wc -c) > 0 ]]
+    then
+	contents=$0
+    elif (( $# != 1 )) || [[ $1 =~ ^(-h|--help)$ ]]
+    then
+	echo "Usage: $0 FILE"
+	echo "Upload contents of plaintext document to hastebin."
+	echo "\nInvocation with no arguments takes input from stdin or pipe."
+	echo "Terminate stdin by EOF (Ctrl-D)."
+	return 1
+    elif [[ -e $1 && ! -f $1 ]]
+    then
+	echo "Error: Not a regular file."
+	return 1
+    elif [[ ! -e $1 ]]
+    then
+	echo "Error: No such file."
+	return 1
+    elif (( $(stat -c %s $1) > (512*1024**1) ))
+    then
+	echo "Error: File must be smaller than 512 KiB."
+	return 1
+    fi
+    if [[ -n "$contents" ]] || [[ $(printf "%s" "$contents" | wc -c) < 1 ]]
+    then
+	contents=$(cat $1)
+    fi
+    result=$(curl -# -sf --data-binary @${1:--} ${docs}) || {
+	echo "ERROR: failed to post document >&2"
+	return 1
+    }
+    key=$(echo $result | jq -r .key)
+    echo ${server}/${key}
+}
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/jmt/.sdkman"
+[[ -s "/home/jmt/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jmt/.sdkman/bin/sdkman-init.sh"

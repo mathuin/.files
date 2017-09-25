@@ -105,29 +105,16 @@ chatnets = {
     max_whois = "30";
   };
   SILC = { type = "SILC"; };
-  FreeNode = {
-    type = "IRC";
-    autosendcmd = "wait 2000;/^msg chanserv invite #osuosl-dev;wait 2000";
-  };
   esper = { type = "IRC"; };
   pdx = { type = "IRC"; };
+  FreeNode = { type = "IRC"; };
 };
 
 channels = (
-  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#osuosl"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#osuosl-dev"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#osuosl-staff"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#osuosl-infra"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#osuosl-staff"; chatnet = "FreeNode"; autojoin = "Yes"; },
-  { name = "#osuosl-gsoc"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#osu-lug"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#osu-lug-admin"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#osuosl-students"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "##omgmanatees"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#w7osu"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#rancher"; chatnet = "FreeNode"; autojoin = "yes"; }
+  { name = "#w7osu"; chatnet = "FreeNode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -299,7 +286,7 @@ settings = {
     nick = "Mathuin";
   };
   "fe-text" = { actlist_sort = "refnum"; scrollback_time = "7days"; };
-  "fe-common/core" = { term_charset = "utf-8"; };
+  "fe-common/core" = { term_charset = "utf-8"; autolog = "yes"; };
 };
 ignores = (
   { mask = "MODES"; level = "JOINS PARTS QUITS"; },
@@ -419,3 +406,4 @@ windows = {
   };
   mainwindows = { 1 = { first_line = "1"; lines = "56"; }; };
 };
+logs = { };
