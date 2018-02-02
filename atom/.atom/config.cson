@@ -2,8 +2,21 @@
   "circle-ci":
     apiToken: "1ee71591fa0d51ed7e892c13fb78c645556f2e76"
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
-      "gometalinter-linter"
+      "linter"
+      "atom-ide-ui"
+      "tree-view"
     ]
     telemetryConsent: "limited"
     themes: [
