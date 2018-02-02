@@ -76,20 +76,11 @@ pathpre ${HOME}/.local/bin
 pathpre ${HOME}/node_modules/.bin
 
 # local Ruby stuff goes here
-<<<<<<< HEAD
-pathpre ${HOME}/.rbenv/bin
-eval "$(rbenv init -)"
-pathpre ${HOME}/.rbenv/plugins/ruby-build/bin
-for newpath in ${HOME}/.gem/ruby/*/bin; do
-    pathadd $newpath
-done
-=======
 if command -v rbenv; then
     pathpre ${HOME}/.rbenv/bin
     eval "$(rbenv init -)"
     pathpre ${HOME}/.rbenv/plugins/ruby-build/bin
 fi
->>>>>>> 7eba96a8db013382445d66b0eab84ddc3f0292bf
 
 # Android
 export ADT=/home/jmt/android-studio
