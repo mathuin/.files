@@ -16,7 +16,6 @@
     disabledPackages: [
       "linter"
       "atom-ide-ui"
-      "tree-view"
     ]
     telemetryConsent: "limited"
     themes: [
