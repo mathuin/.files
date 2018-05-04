@@ -309,7 +309,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#osuosl-dev";
+        name = "#osu-lug";
         tag = "freenode";
       }
     );
@@ -319,7 +319,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#osuosl-infra";
+        name = "##omgmanatees";
         tag = "freenode";
       }
     );
@@ -329,77 +329,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#osuosl-staff";
-        tag = "freenode";
-      }
-    );
-  };
-  6 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#osuosl-gsoc";
-        tag = "freenode";
-      }
-    );
-  };
-  7 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#osu-lug";
-        tag = "freenode";
-      }
-    );
-  };
-  8 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#osu-lug-admin";
-        tag = "freenode";
-      }
-    );
-  };
-  9 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#osuosl-students";
-        tag = "freenode";
-      }
-    );
-  };
-  10 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "##omgmanatees";
-        tag = "freenode";
-      }
-    );
-  };
-  11 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
         name = "#w7osu";
-        tag = "freenode";
-      }
-    );
-  };
-  12 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#rancher";
         tag = "freenode";
       }
     );
