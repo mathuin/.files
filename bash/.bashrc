@@ -76,7 +76,7 @@ pathpre ${HOME}/.local/bin
 pathpre ${HOME}/node_modules/.bin
 
 # local Ruby stuff goes here
-if command -v rbenv; then
+if command -v rbenv >/dev/null; then
     pathpre ${HOME}/.rbenv/bin
     eval "$(rbenv init -)"
     pathpre ${HOME}/.rbenv/plugins/ruby-build/bin
