@@ -44,6 +44,10 @@
     plugins:
       "split-diff": true
       "split-diffDecorationsZIndex": 0
+  nuclide:
+    "nuclide-home":
+      showHome: false
+    use: {}
   "one-dark-ui": {}
   "package-sync":
     forceOverwrite: true
