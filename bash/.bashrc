@@ -96,6 +96,9 @@ export GOPATH=${HOME}/go
 pathadd ${GOPATH}/bin
 pathpre /usr/local/go/bin
 
+# texlive
+pathadd /usr/local/texlive/2018/bin/x86_64-linux
+
 # Heroku toolbelt
 pathadd /usr/local/heroku/bin
 

@@ -1,79 +1,35 @@
 "*":
-  "circle-ci":
-    apiToken: "1ee71591fa0d51ed7e892c13fb78c645556f2e76"
+  "atom-beautify":
+    general:
+      _analyticsUserId: "653815c0-ea14-410c-810e-92366e30404e"
   core:
-    customFileTypes:
-      "source.ini": [
-        ".buckconfig"
-        ".hgrc"
-      ]
-      "source.json": [
-        "BUCK.autodeps"
-      ]
-      "source.python": [
-        "BUCK"
-      ]
     disabledPackages: [
-      "linter"
       "atom-ide-ui"
-      "tree-view"
     ]
     telemetryConsent: "limited"
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
-    ]
-  editor:
-    backUpBeforeSaving: true
-    fontFamily: "Go Mono"
-    invisibles: {}
-    scrollPastEnd: true
-    showIndentGuide: true
-    showInvisibles: true
-    softWrap: true
-    tabLength: 4
   "exception-reporting":
-    userId: "025be5c2-c601-99a3-cc83-dc8ed147932f"
-  "git-plus": {}
-  "go-plus": {}
-  latex: {}
-  "linter-flake8":
-    maxLineLength: 1000
-  "merge-conflicts": {}
-  minimap:
-    plugins:
-      "split-diff": true
-      "split-diffDecorationsZIndex": 0
-  nuclide:
-    "nuclide-home":
-      showHome: false
-    use: {}
-  "one-dark-ui": {}
-  "package-sync":
-    forceOverwrite: true
-  "pretty-json":
-    prettifyOnSaveJSON: true
-  "spell-check":
-    grammars: [
-      "source.asciidoc"
-      "source.gfm"
-      "text.git-commit"
-      "text.plain"
-      "text.plain.null-grammar"
-      "text.tex.latex"
-    ]
-  "travis-ci-status": {}
-  "tree-view": {}
+    userId: "04fa9b4d-232d-4244-8020-73f7126a918e"
   welcome:
     showOnStartup: false
-  whitespace:
-    removeTrailingWhitespace: false
-".TIS-100.asm.source":
+".beamer.latex.tex.text":
   editor:
-    tabLength: 4
-".TIS.asm.source":
+    softWrapAtPreferredLineLength: false
+".bibtex.text":
   editor:
-    tabLength: 4
-".diff.source":
+    softWrap: true
+    softWrapAtPreferredLineLength: false
+".latex.log.text":
   editor:
-    tabLength: 4
+    softWrap: true
+    softWrapAtPreferredLineLength: false
+".latex.memoir.tex.text":
+  editor:
+    softWrapAtPreferredLineLength: false
+".latex.tex.text":
+  editor:
+    softWrap: true
+    softWrapAtPreferredLineLength: false
+".tex.text":
+  editor:
+    softWrap: true
+    softWrapAtPreferredLineLength: false
