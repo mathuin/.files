@@ -9,6 +9,7 @@
     telemetryConsent: "limited"
   "exception-reporting":
     userId: "04fa9b4d-232d-4244-8020-73f7126a918e"
+  "split-diff": {}
   welcome:
     showOnStartup: false
 ".beamer.latex.tex.text":

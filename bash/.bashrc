@@ -375,7 +375,3 @@ haste () {
     key=$(echo $result | jq -r .key)
     echo ${server}/${key}
 }
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/jmt/.sdkman"
-[[ -s "/home/jmt/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jmt/.sdkman/bin/sdkman-init.sh"
