@@ -3,34 +3,26 @@
     general:
       _analyticsUserId: "653815c0-ea14-410c-810e-92366e30404e"
   core:
+    autoHideMenuBar: true
+    closeDeletedFileTabs: true
     disabledPackages: [
       "atom-ide-ui"
     ]
     telemetryConsent: "limited"
+    themes: [
+      "atom-dark-ui"
+      "solarized-dark-syntax"
+    ]
+    useTreeSitterParsers: true
+  editor:
+    softWrap: true
+    softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "04fa9b4d-232d-4244-8020-73f7126a918e"
+  "linter-flake8":
+    maxLineLength: 240
+  "linter-ui-default":
+    panelHeight: 300
   "split-diff": {}
   welcome:
     showOnStartup: false
-".beamer.latex.tex.text":
-  editor:
-    softWrapAtPreferredLineLength: false
-".bibtex.text":
-  editor:
-    softWrap: true
-    softWrapAtPreferredLineLength: false
-".latex.log.text":
-  editor:
-    softWrap: true
-    softWrapAtPreferredLineLength: false
-".latex.memoir.tex.text":
-  editor:
-    softWrapAtPreferredLineLength: false
-".latex.tex.text":
-  editor:
-    softWrap: true
-    softWrapAtPreferredLineLength: false
-".tex.text":
-  editor:
-    softWrap: true
-    softWrapAtPreferredLineLength: false
